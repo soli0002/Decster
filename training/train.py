@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
 import joblib
 
 
@@ -34,12 +35,15 @@ X_test_tfidf = vectorizer.transform(X_test)
 
 print('Creating model...')
 # Create the model
-model = LogisticRegression()
+model = SVC(kernel='linear')
 
 
 print('Training...')
 # Train the model on the training data
 model.fit(X_train_tfidf, y_train)
+
+# Predict on the testing data
+y_pred = model.predict(X_test_tfidf)
 
 print('Evaluating...')
 # Evaluate the model on the testing data
