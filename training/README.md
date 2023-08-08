@@ -10,4 +10,3 @@ This is because `generate_data_without_spaces.py` is set to append to the traini
 
 
 Next, you can either run `train.py` on your own computer or use the `.ipynb` notebook to run it in the cloud and get a link to download the generated file locally.
-The final model file should be around 80-100mb.
